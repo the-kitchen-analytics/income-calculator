@@ -4,6 +4,7 @@ import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
 import com.thekitchen.incomecalculator.controller.model.ProcedureResponse;
 import com.thekitchen.incomecalculator.service.AbstractDataService;
 import com.thekitchen.incomecalculator.service.model.Procedure;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,12 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
   }
 
   @Override
+  @PostMapping("all")
+  protected ResponseEntity<List<ProcedureResponse>> saveAll(@RequestBody Collection<ProcedureRequest> requestAll) {
+    return super.saveAll(requestAll);
+  }
+
+  @Override
   @PutMapping("{id}")
   protected ResponseEntity<ProcedureResponse> update(
       @PathVariable UUID id,
@@ -54,6 +61,12 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
   @DeleteMapping("{id}")
   protected ResponseEntity<Void> delete(@PathVariable UUID id) {
     return super.delete(id);
+  }
+
+  @Override
+  @DeleteMapping
+  protected ResponseEntity<Void> deleteAll(@RequestBody Collection<UUID> ids) {
+    return super.deleteAll(ids);
   }
 
 }

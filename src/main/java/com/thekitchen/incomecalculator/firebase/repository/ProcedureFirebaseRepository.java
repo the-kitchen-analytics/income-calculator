@@ -5,6 +5,7 @@ import com.thekitchen.incomecalculator.firebase.entity.ProcedureFirebaseEntity;
 import com.thekitchen.incomecalculator.firebase.mapper.FirebaseEntityMapper;
 import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.model.Procedure;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -38,20 +39,34 @@ public class ProcedureFirebaseRepository
   }
 
   @Override
-  public Procedure save(Procedure model) {
-    Objects.requireNonNull(model, "Procedure cannot be null");
-    return super.save(model);
+  public Procedure save(Procedure procedure) {
+    Objects.requireNonNull(procedure, "Procedure cannot be null");
+    return super.save(procedure);
   }
 
   @Override
-  public Procedure update(UUID id, Procedure model) {
-    Objects.requireNonNull(model, "Procedure cannot be null");
-    return super.update(id.toString(), model);
+  public List<Procedure> saveAll(Collection<Procedure> procedures) {
+    Objects.requireNonNull(procedures, "Procedures cannot be null");
+    return procedures.stream()
+        .map(this::save)
+        .toList();
+  }
+
+  @Override
+  public Procedure update(UUID id, Procedure procedure) {
+    Objects.requireNonNull(procedure, "Procedure cannot be null");
+    return super.update(id.toString(), procedure);
   }
 
   @Override
   public void delete(UUID id) {
     Objects.requireNonNull(id, "ID cannot be null");
     super.delete(id.toString());
+  }
+
+  @Override
+  public void deleteAll(Collection<UUID> ids) {
+    Objects.requireNonNull(ids, "IDs cannot be null");
+    ids.forEach(this::delete);
   }
 }
