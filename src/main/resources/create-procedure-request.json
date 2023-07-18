@@ -1,0 +1,18 @@
+[
+  {
+    "name": "The Kitchen",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 0,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 0,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]

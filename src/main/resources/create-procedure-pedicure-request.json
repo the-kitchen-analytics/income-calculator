@@ -1,0 +1,50 @@
+[
+  {
+    "name": "The Kitchen",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 46,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Snacky time",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 35,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Healthy food",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 49,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 57,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]
