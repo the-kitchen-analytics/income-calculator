@@ -5,15 +5,14 @@ import com.thekitchen.incomecalculator.service.mapper.RequestMapper;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public abstract class AbstractDataService<MODEL, REQUEST, VIEW>
-    implements DataService<REQUEST, VIEW> {
+public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
+    implements DataService<REQUEST, VIEW, ID> {
 
   private final RequestMapper<MODEL, REQUEST, VIEW> mapper;
-  private final Repository<MODEL, UUID> repository;
+  private final Repository<MODEL, ID> repository;
 
   @Override
   public List<VIEW> getAll() {
@@ -24,7 +23,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW>
   }
 
   @Override
-  public Optional<VIEW> get(UUID id) {
+  public Optional<VIEW> get(ID id) {
     return repository.getById(id)
         .map(mapper::toView);
   }
@@ -45,18 +44,18 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW>
   }
 
   @Override
-  public VIEW update(UUID id, REQUEST request) {
+  public VIEW update(ID id, REQUEST request) {
     var updated = repository.update(id, mapper.toModel(request));
     return mapper.toView(updated);
   }
 
   @Override
-  public void delete(UUID id) {
+  public void delete(ID id) {
     repository.delete(id);
   }
 
   @Override
-  public void deleteAll(Collection<UUID> ids) {
+  public void deleteAll(Collection<ID> ids) {
     repository.deleteAll(ids);
   }
 }

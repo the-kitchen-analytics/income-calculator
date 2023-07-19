@@ -1,0 +1,370 @@
+[
+  {
+    "name": "THE KITCHEN",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 55,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 65,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "HEALTHY FOOD",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 64,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 75,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "SNACKY TIME",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 51,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 60,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "FAST FOOD",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 43,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 50,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "FRENCH PIE",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 60,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 70,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "EASY FOOD",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 47,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 55,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "DETOX",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 56,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 65,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "ULTIMATE",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 57,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 67,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Педикюр",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 43,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 50,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Снятие гель-лак покрытия",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Экспресс педикюр",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 35,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Мужской педикюр",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 43,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 50,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие гель-лаком",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие однофазным лаком",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 10,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие обычным лаком",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление IBX",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление Seal & Protect",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление Seal & Protect в комплексе с сетом",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Простой дизайн",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Сложный дизайн",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Ремонт ногтя",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 3,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 3,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Сложный ремонт ногтя",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Наклейка",
+    "type": "PEDICURE",
+    "prices": [
+      {
+        "price": 2,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 2,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]

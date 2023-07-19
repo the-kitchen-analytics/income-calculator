@@ -1,12 +1,11 @@
 package com.thekitchen.incomecalculator.controller;
 
+import com.thekitchen.incomecalculator.controller.model.CreateProcedureRequest;
 import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
 import com.thekitchen.incomecalculator.controller.model.ProcedureResponse;
-import com.thekitchen.incomecalculator.service.AbstractDataService;
-import com.thekitchen.incomecalculator.service.model.Procedure;
+import com.thekitchen.incomecalculator.service.ProcedureDataService;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,10 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "procedures")
-class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureResponse> {
+class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureResponse, String> {
 
-  ProcedureController(AbstractDataService<Procedure, ProcedureRequest, ProcedureResponse> dataService) {
-    super(dataService);
+  private final ProcedureDataService service;
+
+  ProcedureController(ProcedureDataService service) {
+    super(service);
+    this.service = service;
   }
 
   @Override
@@ -33,39 +35,33 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
 
   @Override
   @GetMapping("{id}")
-  protected ResponseEntity<ProcedureResponse> get(@PathVariable UUID id) {
+  protected ResponseEntity<ProcedureResponse> get(@PathVariable String id) {
     return super.get(id);
   }
 
-  @Override
   @PostMapping
-  protected ResponseEntity<ProcedureResponse> save(@RequestBody ProcedureRequest request) {
-    return super.save(request);
-  }
-
-  @Override
-  @PostMapping("all")
-  protected ResponseEntity<List<ProcedureResponse>> saveAll(@RequestBody Collection<ProcedureRequest> requestAll) {
-    return super.saveAll(requestAll);
+  protected ResponseEntity<List<ProcedureResponse>> saveAll(@RequestBody List<CreateProcedureRequest> request) {
+    var result = service.createAll(request);
+    return ResponseEntity.ok(result);
   }
 
   @Override
   @PutMapping("{id}")
   protected ResponseEntity<ProcedureResponse> update(
-      @PathVariable UUID id,
+      @PathVariable String id,
       @RequestBody ProcedureRequest request) {
     return super.update(id, request);
   }
 
   @Override
   @DeleteMapping("{id}")
-  protected ResponseEntity<Void> delete(@PathVariable UUID id) {
+  protected ResponseEntity<Void> delete(@PathVariable String id) {
     return super.delete(id);
   }
 
   @Override
   @DeleteMapping
-  protected ResponseEntity<Void> deleteAll(@RequestBody Collection<UUID> ids) {
+  protected ResponseEntity<Void> deleteAll(@RequestBody Collection<String> ids) {
     return super.deleteAll(ids);
   }
 

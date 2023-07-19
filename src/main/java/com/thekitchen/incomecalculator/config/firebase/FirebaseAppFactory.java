@@ -27,7 +27,7 @@ public class FirebaseAppFactory {
   }
 
   private GoogleCredentials googleCredentials(FirebaseProperties properties) {
-    try (var serviceAccount = Files.newInputStream(Path.of(properties.serviceAccountFilePath()));) {
+    try (var serviceAccount = Files.newInputStream(Path.of(properties.serviceAccountFilePath()))) {
       return GoogleCredentials.fromStream(serviceAccount);
     } catch (IOException e) {
       throw new RuntimeException(e);

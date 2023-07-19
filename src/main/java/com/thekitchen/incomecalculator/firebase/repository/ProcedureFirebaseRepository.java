@@ -9,8 +9,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
-import java.util.function.Supplier;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -22,9 +20,8 @@ public class ProcedureFirebaseRepository
 
   public ProcedureFirebaseRepository(
       FirebaseEntityMapper<Procedure, ProcedureFirebaseEntity> mapper,
-      Firestore firestore,
-      Supplier<UUID> uuidSupplier) {
-    super(mapper, firestore, COLLECTION_NAME, uuidSupplier, ProcedureFirebaseEntity.class);
+      Firestore firestore) {
+    super(mapper, firestore, COLLECTION_NAME, ProcedureFirebaseEntity.class);
   }
 
   @Override
@@ -33,39 +30,39 @@ public class ProcedureFirebaseRepository
   }
 
   @Override
-  public Optional<Procedure> getById(UUID id) {
+  public Optional<Procedure> getById(String id) {
     Objects.requireNonNull(id, "ID cannot be null");
-    return super.getById(id.toString());
+    return super.getById(id);
   }
 
   @Override
   public Procedure save(Procedure procedure) {
     Objects.requireNonNull(procedure, "Procedure cannot be null");
-    return super.save(procedure);
+    return super.create(procedure);
   }
 
   @Override
   public List<Procedure> saveAll(Collection<Procedure> procedures) {
     Objects.requireNonNull(procedures, "Procedures cannot be null");
     return procedures.stream()
-        .map(this::save)
+        .map(this::create)
         .toList();
   }
 
   @Override
-  public Procedure update(UUID id, Procedure procedure) {
+  public Procedure update(String id, Procedure procedure) {
     Objects.requireNonNull(procedure, "Procedure cannot be null");
-    return super.update(id.toString(), procedure);
+    return super.update(id, procedure);
   }
 
   @Override
-  public void delete(UUID id) {
+  public void delete(String id) {
     Objects.requireNonNull(id, "ID cannot be null");
-    super.delete(id.toString());
+    super.delete(id);
   }
 
   @Override
-  public void deleteAll(Collection<UUID> ids) {
+  public void deleteAll(Collection<String> ids) {
     Objects.requireNonNull(ids, "IDs cannot be null");
     ids.forEach(this::delete);
   }
