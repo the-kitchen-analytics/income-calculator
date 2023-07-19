@@ -1,6 +1,6 @@
 [
   {
-    "name": "The Kitchen",
+    "name": "THE KITCHEN",
     "type": "MANICURE",
     "prices": [
       {
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "name": "Snacky time",
+    "name": "SNACKY TIME",
     "type": "MANICURE",
     "prices": [
       {
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "name": "Healthy food",
+    "name": "HEALTHY FOOD",
     "type": "MANICURE",
     "prices": [
       {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "name": "Detox",
+    "name": "DETOX",
     "type": "MANICURE",
     "prices": [
       {
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "name": "Easy food",
+    "name": "EASY FOOD",
     "type": "MANICURE",
     "prices": [
       {
@@ -80,7 +80,7 @@
     ]
   },
   {
-    "name": "Fast food",
+    "name": "FAST FOOD",
     "type": "MANICURE",
     "prices": [
       {
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "name": "French pie",
+    "name": "FRENCH PIE",
     "type": "MANICURE",
     "prices": [
       {
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "name": "Gastro set",
+    "name": "GASTRO SET",
     "type": "MANICURE",
     "prices": [
       {
@@ -128,7 +128,7 @@
     ]
   },
   {
-    "name": "Ultimate",
+    "name": "ULTIMATE",
     "type": "MANICURE",
     "prices": [
       {

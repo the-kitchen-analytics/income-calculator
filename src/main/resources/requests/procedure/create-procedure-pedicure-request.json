@@ -1,6 +1,6 @@
 [
   {
-    "name": "The kitchen",
+    "name": "THE KITCHEN",
     "type": "PEDICURE",
     "prices": [
       {
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "name": "Healthy food",
+    "name": "HEALTHY FOOD",
     "type": "PEDICURE",
     "prices": [
       {
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "name": "Snacky time",
+    "name": "SNACKY TIME",
     "type": "PEDICURE",
     "prices": [
       {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "name": "Fast food",
+    "name": "FAST FOOD",
     "type": "PEDICURE",
     "prices": [
       {
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "name": "French pie",
+    "name": "FRENCH PIE",
     "type": "PEDICURE",
     "prices": [
       {
@@ -80,7 +80,7 @@
     ]
   },
   {
-    "name": "Easy food",
+    "name": "EASY FOOD",
     "type": "PEDICURE",
     "prices": [
       {
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "name": "Detox",
+    "name": "DETOX",
     "type": "PEDICURE",
     "prices": [
       {
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "name": "Ultimate",
+    "name": "ULTIMATE",
     "type": "PEDICURE",
     "prices": [
       {
