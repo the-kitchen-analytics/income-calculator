@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Be penne",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 25,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 25,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Be happy",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 30,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 30,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Be full",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Ultimate",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 45,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 45,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Окрашивание ресниц",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 10,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 10,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Окрашивание бровей",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Коррекция бровей",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Ламинирование бровей",
+    "type": "BROWS",
+    "prices": [
+      {
+        "price": 20,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 20,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]

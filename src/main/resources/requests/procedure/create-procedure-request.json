@@ -1,0 +1,450 @@
+[
+  {
+    "name": "The Kitchen",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 46,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Snacky time",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 35,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Healthy food",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 49,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 57,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Detox",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 46,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Easy food",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 33,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 39,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Fast food",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 29,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 33,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "French pie",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 44,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 52,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Gastro set",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 46,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Ultimate",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 43,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 48,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Японский",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 37,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 40,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Маникюр",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 25,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 29,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Снятие гель-лак покрытия",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Экспресс маникюр",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 18,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 22,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Мужской маникюр",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 25,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 29,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Детский маникюр с обычным лаком (до 10 лет)",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие гель-лаком",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 15,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие однофазным лаком",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 10,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Покрытие обычным лаком",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление IBX",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление Seal & Protect",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Восстановление Seal & Protect в комплексе с сетом",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Простой дизайн",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "French дизайн",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 6,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Сложный дизайн",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Укрепление гелем",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 14,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Ремонт ногтя",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 3,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 3,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Сложный ремонт ногтя",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 5,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Наклейка",
+    "type": "MANICURE",
+    "prices": [
+      {
+        "price": 2,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 2,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]

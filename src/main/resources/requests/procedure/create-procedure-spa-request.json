@@ -1,0 +1,98 @@
+[
+  {
+    "name": "SPA рук",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "SPA ног",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 17,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Массаж рук",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Массаж ног",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "Массаж шеи, плеч и головы",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 12,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "SPA перчатки",
+    "type": "SPA",
+    "prices": [
+      {
+        "price": 7,
+        "workerRate": 0.4,
+        "workerCategory": "MASTER"
+      },
+      {
+        "price": 7,
+        "workerRate": 0.4,
+        "workerCategory": "TOP_MASTER"
+      }
+    ]
+  }
+]
