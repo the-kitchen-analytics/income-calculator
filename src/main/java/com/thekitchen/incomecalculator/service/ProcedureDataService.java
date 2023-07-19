@@ -8,18 +8,17 @@ import com.thekitchen.incomecalculator.service.mapper.ProcedureRequestMapper;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProcedureDataService
-    extends AbstractDataService<Procedure, ProcedureRequest, ProcedureResponse> {
+    extends AbstractDataService<Procedure, ProcedureRequest, ProcedureResponse, String> {
 
   private final ProcedureRequestMapper mapper;
 
   public ProcedureDataService(
       ProcedureRequestMapper mapper,
-      Repository<Procedure, UUID> repository) {
+      Repository<Procedure, String> repository) {
     super(mapper, repository);
     this.mapper = mapper;
   }

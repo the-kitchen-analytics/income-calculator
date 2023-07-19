@@ -5,15 +5,16 @@ import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.QuerySnapshot;
 import com.thekitchen.incomecalculator.firebase.entity.FirebaseEntity;
 import com.thekitchen.incomecalculator.firebase.mapper.FirebaseEntityMapper;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
@@ -25,7 +26,6 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
   private final FirebaseEntityMapper<M, E> mapper;
   private final Firestore firestore;
   private final String collectionName;
-  private final Supplier<UUID> uuidSupplier;
   private final Class<E> entityClass;
 
   private final Function<ApiFuture<DocumentSnapshot>, DocumentSnapshot> apiFutureMapper =
@@ -39,12 +39,11 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
 
   @SneakyThrows
   public List<M> getAll() {
-    var querySnapshot = getCollectionRef()
-        .get()
-        .get();
-
-    return querySnapshot.getDocuments()
-        .stream()
+    return Stream.of(getCollectionRef())
+        .map(CollectionReference::get)
+        .map(this::await)
+        .map(QuerySnapshot::getDocuments)
+        .flatMap(Collection::stream)
         .map(this::toModel)
         .toList();
   }
@@ -56,47 +55,54 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
         .map(this::toModel);
   }
 
-  public M save(M model) {
-    var id = generateId(model);
-    replaceDocument(id, model);
-    return getById(id).orElseThrow();
+  @SneakyThrows
+  public M create(M model) {
+    return Stream.of(model)
+        .map(mapper::toEntity)
+        .map(entity -> getCollectionRef().add(entity))
+        .map(this::await)
+        .map(DocumentReference::get)
+        .map(this.apiFutureMapper)
+        .map(this::toModel)
+        .findFirst()
+        .orElseThrow();
   }
 
   public M update(String id, M model) {
-    replaceDocument(id, model);
-    return getById(id).orElseThrow();
+    return Stream.of(getDocumentRef(id))
+        .peek(documentRef -> documentRef.set(mapper.toEntity(model)))
+        .map(DocumentReference::get)
+        .map(this.apiFutureMapper)
+        .map(this::toModel)
+        .findFirst()
+        .orElseThrow();
   }
 
   @SneakyThrows
   public void delete(String id) {
-    getDocumentRef(id)
-        .delete()
-        .get();
+    Stream.of(id)
+        .map(this::getDocumentRef)
+        .map(DocumentReference::delete)
+        .forEach(this::await);
   }
 
-  protected CollectionReference getCollectionRef() {
+  private CollectionReference getCollectionRef() {
     return firestore.collection(collectionName);
-  }
-
-  protected String generateId(M entity) {
-    return uuidSupplier.get().toString();
   }
 
   private DocumentReference getDocumentRef(String id) {
     return getCollectionRef().document(id);
   }
 
-  @SneakyThrows
-  private void replaceDocument(String id, M model) {
-    var documentRef = getDocumentRef(id);
-    documentRef.set(mapper.toEntity(model))
-        .get(DEFAULT_WAIT_INTERVAL_MILLIS, TimeUnit.MILLISECONDS);
-  }
-
   private M toModel(DocumentSnapshot document) {
     return Optional.ofNullable(document.toObject(entityClass))
         .map(entity -> mapper.toModel(document.getId(), entity))
         .orElseThrow();
+  }
+
+  @SneakyThrows
+  private <V> V await(ApiFuture<V> future) {
+    return future.get(DEFAULT_WAIT_INTERVAL_MILLIS, TimeUnit.MILLISECONDS);
   }
 }
 

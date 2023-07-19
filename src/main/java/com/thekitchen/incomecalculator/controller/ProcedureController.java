@@ -6,7 +6,6 @@ import com.thekitchen.incomecalculator.controller.model.ProcedureResponse;
 import com.thekitchen.incomecalculator.service.ProcedureDataService;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "procedures")
-class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureResponse> {
+class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureResponse, String> {
 
   private final ProcedureDataService service;
 
@@ -36,7 +35,7 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
 
   @Override
   @GetMapping("{id}")
-  protected ResponseEntity<ProcedureResponse> get(@PathVariable UUID id) {
+  protected ResponseEntity<ProcedureResponse> get(@PathVariable String id) {
     return super.get(id);
   }
 
@@ -49,20 +48,20 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
   @Override
   @PutMapping("{id}")
   protected ResponseEntity<ProcedureResponse> update(
-      @PathVariable UUID id,
+      @PathVariable String id,
       @RequestBody ProcedureRequest request) {
     return super.update(id, request);
   }
 
   @Override
   @DeleteMapping("{id}")
-  protected ResponseEntity<Void> delete(@PathVariable UUID id) {
+  protected ResponseEntity<Void> delete(@PathVariable String id) {
     return super.delete(id);
   }
 
   @Override
   @DeleteMapping
-  protected ResponseEntity<Void> deleteAll(@RequestBody Collection<UUID> ids) {
+  protected ResponseEntity<Void> deleteAll(@RequestBody Collection<String> ids) {
     return super.deleteAll(ids);
   }
 
