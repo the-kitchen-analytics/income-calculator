@@ -50,8 +50,6 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
 
   public Optional<M> getById(String id) {
     return Optional.of(getDocumentRef(id))
-        .map(DocumentReference::get)
-        .map(this.apiFutureMapper)
         .map(this::toModel);
   }
 
@@ -61,8 +59,6 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
         .map(mapper::toEntity)
         .map(entity -> getCollectionRef().add(entity))
         .map(this::await)
-        .map(DocumentReference::get)
-        .map(this.apiFutureMapper)
         .map(this::toModel)
         .findFirst()
         .orElseThrow();
@@ -71,8 +67,6 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
   public M update(String id, M model) {
     return Stream.of(getDocumentRef(id))
         .peek(documentRef -> documentRef.set(mapper.toEntity(model)))
-        .map(DocumentReference::get)
-        .map(this.apiFutureMapper)
         .map(this::toModel)
         .findFirst()
         .orElseThrow();
@@ -97,6 +91,14 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
   private M toModel(DocumentSnapshot document) {
     return Optional.ofNullable(document.toObject(entityClass))
         .map(entity -> mapper.toModel(document.getId(), entity))
+        .orElseThrow();
+  }
+
+  private M toModel(DocumentReference documentReference) {
+    return Optional.of(documentReference)
+        .map(DocumentReference::get)
+        .map(apiFutureMapper)
+        .map(this::toModel)
         .orElseThrow();
   }
 
