@@ -4,17 +4,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public interface DataService<REQUEST_DTO, DTO, ID> {
+public interface DataService<INPUT, OUTPUT, ID> {
 
-  List<DTO> getAll();
+  List<OUTPUT> getAll();
 
-  Optional<DTO> get(ID id);
+  Optional<OUTPUT> get(ID id);
 
-  DTO save(REQUEST_DTO request);
+  OUTPUT save(INPUT request);
 
-  List<DTO> saveAll(Collection<REQUEST_DTO> requests);
+  List<OUTPUT> saveAll(Collection<INPUT> requests);
 
-  DTO update(ID id, REQUEST_DTO request);
+  OUTPUT update(ID id, INPUT request);
 
   void delete(ID id);
 

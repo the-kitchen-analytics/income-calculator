@@ -12,16 +12,6 @@ import org.springframework.context.annotation.DependsOn;
 @Configuration
 public class FirebaseConfig {
 
-  @Getter
-  @RequiredArgsConstructor
-  public enum CollectionName {
-    RECEIPTS("receipts"),
-    PROCEDURES("procedures_v2"),
-    USERS("userDetails");
-
-    private final String value;
-  }
-
   @Bean
   FirebaseApp firebaseApp(FirebaseProperties properties, FirebaseAppFactory factory) {
     return factory.build(properties);
@@ -31,6 +21,16 @@ public class FirebaseConfig {
   @DependsOn("firebaseApp")
   Firestore firestoreClient() {
     return FirestoreClient.getFirestore();
+  }
+
+  @Getter
+  @RequiredArgsConstructor
+  public enum CollectionName {
+    RECEIPTS("receipts"),
+    PROCEDURES("procedures_v2"),
+    USERS("userDetails");
+
+    private final String value;
   }
 
 }

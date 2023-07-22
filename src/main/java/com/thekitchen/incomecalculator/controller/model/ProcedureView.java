@@ -2,7 +2,7 @@ package com.thekitchen.incomecalculator.controller.model;
 
 import java.math.BigDecimal;
 
-public record ProcedureResponse(
+public record ProcedureView(
     String id,
     String name,
     ProcedureType type,
