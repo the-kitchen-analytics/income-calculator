@@ -5,6 +5,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 @Configuration
 public class FirebaseConfig {
@@ -15,6 +16,7 @@ public class FirebaseConfig {
   }
 
   @Bean
+  @DependsOn("firebaseApp")
   Firestore firestoreClient() {
     return FirestoreClient.getFirestore();
   }
