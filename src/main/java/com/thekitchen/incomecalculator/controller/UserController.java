@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.controller;
 
-import com.thekitchen.incomecalculator.controller.model.UserRequest;
+import com.thekitchen.incomecalculator.controller.model.CreateUserRequest;
 import com.thekitchen.incomecalculator.controller.model.UserView;
 import com.thekitchen.incomecalculator.service.UserDataService;
 import java.util.Collection;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("users")
-public class UserController extends AbstractCrudController<UserRequest, UserView, String> {
+public class UserController extends AbstractCrudController<CreateUserRequest, UserView, String> {
 
   UserController(UserDataService service) {
     super(service);
@@ -36,13 +36,13 @@ public class UserController extends AbstractCrudController<UserRequest, UserView
 
   @Override
   @PostMapping
-  protected ResponseEntity<UserView> save(UserRequest userRequest) {
+  protected ResponseEntity<UserView> save(CreateUserRequest userRequest) {
     return super.save(userRequest);
   }
 
   @Override
   @PutMapping("{id}")
-  protected ResponseEntity<UserView> update(@PathVariable String id, UserRequest userRequest) {
+  protected ResponseEntity<UserView> update(@PathVariable String id, CreateUserRequest userRequest) {
     return super.update(id, userRequest);
   }
 

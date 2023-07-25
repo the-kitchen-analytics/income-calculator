@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.service;
 
-import com.thekitchen.incomecalculator.controller.model.UserRequest;
+import com.thekitchen.incomecalculator.controller.model.CreateUserRequest;
 import com.thekitchen.incomecalculator.controller.model.UserView;
 import com.thekitchen.incomecalculator.repository.UserRepository;
 import com.thekitchen.incomecalculator.service.mapper.UserRequestMapper;
@@ -8,7 +8,7 @@ import com.thekitchen.incomecalculator.service.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDataService extends AbstractDataService<User, UserRequest, UserView, String> {
+public class UserDataService extends AbstractDataService<User, CreateUserRequest, UserView, String> {
 
   private final UserDataDeletionService deletionService;
 
