@@ -38,7 +38,7 @@ public class UserDataDeletionService {
 
   @SneakyThrows
   private void deleteAuth(String uid) {
-    log.info("Delete firebase auth receipts: {}", uid);
+    log.info("Delete firebase auth: {}", uid);
     FirebaseAuth.getInstance().deleteUser(uid);
   }
 }
