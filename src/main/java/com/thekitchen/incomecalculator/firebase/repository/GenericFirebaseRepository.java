@@ -80,6 +80,16 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
         .forEach(this::await);
   }
 
+  public void deleteAll(Collection<String> ids) {
+    var batch = firestore.batch();
+
+    ids.stream()
+        .map(this::getDocumentRef)
+        .forEach(batch::delete);
+
+    await(batch.commit());
+  }
+
   private CollectionReference getCollectionRef() {
     return firestore.collection(collectionName);
   }

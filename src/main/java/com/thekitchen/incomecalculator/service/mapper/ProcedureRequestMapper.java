@@ -3,9 +3,10 @@ package com.thekitchen.incomecalculator.service.mapper;
 import com.thekitchen.incomecalculator.controller.model.CreateProcedureRequest;
 import com.thekitchen.incomecalculator.controller.model.PriceDetails;
 import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureResponse;
 import com.thekitchen.incomecalculator.controller.model.ProcedureType;
+import com.thekitchen.incomecalculator.controller.model.ProcedureView;
 import com.thekitchen.incomecalculator.service.model.Procedure;
+import com.thekitchen.incomecalculator.service.model.WorkerCategory;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -13,7 +14,7 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface ProcedureRequestMapper
-    extends RequestMapper<Procedure, ProcedureRequest, ProcedureResponse> {
+    extends RequestMapper<Procedure, ProcedureRequest, ProcedureView> {
 
   default List<ProcedureRequest> fromCreateRequest(CreateProcedureRequest request) {
     return request.prices().stream()
@@ -35,5 +36,9 @@ public interface ProcedureRequestMapper
         .multiply(details.workerRate())
         .setScale(3, RoundingMode.HALF_UP);
   }
+
+  WorkerCategory toModel(com.thekitchen.incomecalculator.controller.model.WorkerCategory request);
+
+  com.thekitchen.incomecalculator.service.model.ProcedureType toModel(com.thekitchen.incomecalculator.controller.model.ProcedureType request);
 
 }

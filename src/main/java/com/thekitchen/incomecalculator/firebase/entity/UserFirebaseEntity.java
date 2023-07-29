@@ -3,11 +3,11 @@ package com.thekitchen.incomecalculator.firebase.entity;
 import lombok.Data;
 
 @Data
-public class ProcedureFirebaseEntity implements FirebaseEntity {
+public class UserFirebaseEntity implements FirebaseEntity {
 
+  private String uid;
+  private String email;
   private String name;
-  private String type;
+  private String displayName;
   private String workerCategory;
-  private Double price;
-  private Double workerIncome;
 }

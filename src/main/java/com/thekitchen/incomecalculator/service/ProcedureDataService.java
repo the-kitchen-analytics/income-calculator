@@ -2,8 +2,10 @@ package com.thekitchen.incomecalculator.service;
 
 import com.thekitchen.incomecalculator.controller.model.CreateProcedureRequest;
 import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureResponse;
-import com.thekitchen.incomecalculator.repository.Repository;
+import com.thekitchen.incomecalculator.controller.model.ProcedureType;
+import com.thekitchen.incomecalculator.controller.model.ProcedureView;
+import com.thekitchen.incomecalculator.controller.model.WorkerCategory;
+import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.mapper.ProcedureRequestMapper;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import java.util.Collection;
@@ -12,25 +14,27 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProcedureDataService
-    extends AbstractDataService<Procedure, ProcedureRequest, ProcedureResponse, String> {
+    extends AbstractDataService<Procedure, ProcedureRequest, ProcedureView, String> {
 
   private final ProcedureRequestMapper mapper;
+  private final ProcedureRepository repository;
 
   public ProcedureDataService(
       ProcedureRequestMapper mapper,
-      Repository<Procedure, String> repository) {
+      ProcedureRepository repository) {
     super(mapper, repository);
     this.mapper = mapper;
+    this.repository = repository;
   }
 
-  public List<ProcedureResponse> create(CreateProcedureRequest request) {
+  public List<ProcedureView> create(CreateProcedureRequest request) {
     return mapper.fromCreateRequest(request)
         .stream()
         .map(this::save)
         .toList();
   }
 
-  public List<ProcedureResponse> createAll(List<CreateProcedureRequest> requests) {
+  public List<ProcedureView> createAll(List<CreateProcedureRequest> requests) {
     return requests.stream()
         .map(mapper::fromCreateRequest)
         .flatMap(Collection::stream)
@@ -38,4 +42,26 @@ public class ProcedureDataService
         .toList();
   }
 
+  public List<ProcedureView> findAllByWorkerCategory(WorkerCategory workerCategory) {
+    return repository.findAllByWorkerCategory(mapper.toModel(workerCategory))
+        .stream()
+        .map(mapper::toView)
+        .toList();
+  }
+
+  public List<ProcedureView> findAllByType(ProcedureType type) {
+    return repository.findAllByType(mapper.toModel(type))
+        .stream()
+        .map(mapper::toView)
+        .toList();
+  }
+
+  public List<ProcedureView> findAllByWorkerCategoryAndType(WorkerCategory workerCategory, ProcedureType type) {
+    return repository.findAllByWorkerCategoryAndType(
+            mapper.toModel(workerCategory),
+            mapper.toModel(type))
+        .stream()
+        .map(mapper::toView)
+        .toList();
+  }
 }
