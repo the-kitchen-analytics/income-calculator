@@ -1,10 +1,11 @@
 package com.thekitchen.incomecalculator;
 
+import com.thekitchen.incomecalculator.config.firebase.FirebaseProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-@ConfigurationPropertiesScan
+@EnableConfigurationProperties({FirebaseProperties.class})
 @SpringBootApplication
 public class Main {
 
