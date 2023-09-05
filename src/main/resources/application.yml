@@ -1,3 +1,3 @@
 firebase:
-  databaseUrl: 'https://the-kitchen-calculator/firebaseio.com'
-  serviceAccountFilePath: '.firebase-config/the-kitchen-calculator-firebase-config.json'
+  projectId: ${FIREBASE_PROJECT_ID:the-kitchen-calculator}
+  databaseUrl: ${FIREBASE_DATABASE_URL:'https://the-kitchen-calculator/firebaseio.com'}
