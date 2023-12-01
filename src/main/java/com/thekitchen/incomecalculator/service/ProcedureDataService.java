@@ -1,16 +1,13 @@
 package com.thekitchen.incomecalculator.service;
 
-import com.thekitchen.incomecalculator.controller.model.CreateProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureType;
-import com.thekitchen.incomecalculator.controller.model.ProcedureView;
-import com.thekitchen.incomecalculator.controller.model.WorkerCategory;
+import com.thekitchen.incomecalculator.controller.model.*;
 import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.mapper.ProcedureRequestMapper;
 import com.thekitchen.incomecalculator.service.model.Procedure;
+import org.springframework.stereotype.Service;
+
 import java.util.Collection;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
 @Service
 public class ProcedureDataService
