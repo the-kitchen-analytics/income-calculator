@@ -29,10 +29,8 @@ class UserDataServiceTest {
   private UserRequestMapper mapper;
   @Mock
   private UserDataDeletionService deletionService;
-
   @InjectMocks
   private UserDataService underTest;
-
 
   @Test
   void delete_Should_CallDeletionService_When_UserIsPresent() {

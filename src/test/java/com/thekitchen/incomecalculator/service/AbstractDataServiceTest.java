@@ -45,10 +45,8 @@ class AbstractDataServiceTest {
 
   @Mock
   private RequestMapper<Model, Request, View> mapper;
-
   @Mock
   private Repository<Model, Id> repository;
-
   @InjectMocks
   private UnderTest underTest;
 
