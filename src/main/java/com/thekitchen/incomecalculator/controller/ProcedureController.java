@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "procedures")
@@ -26,16 +25,25 @@ class ProcedureController extends AbstractCrudController<ProcedureRequest, Proce
   }
 
   @GetMapping
-  protected ResponseEntity<List<ProcedureView>> getAll(
-      @RequestParam(required = false) WorkerCategory workerCategory,
-      @RequestParam(required = false) ProcedureType type) {
+  protected ResponseEntity<List<ProcedureView>> getAll() {
+    return ResponseEntity.ok(service.getAll());
+  }
 
-    var queryParams = new ProceduresQueryParams(
-        Optional.ofNullable(workerCategory),
-        Optional.ofNullable(type)
-    );
+  @GetMapping(params = "workerCategory")
+  protected ResponseEntity<List<ProcedureView>> getAllByWorkerCategory(@RequestParam WorkerCategory workerCategory) {
+    return ResponseEntity.ok(service.findAllByWorkerCategory(workerCategory));
+  }
 
-    return ResponseEntity.ok(queryParamsService.get(queryParams));
+  @GetMapping(params = "type")
+  protected ResponseEntity<List<ProcedureView>> getAllByProcedureType(@RequestParam ProcedureType type) {
+    return ResponseEntity.ok(service.findAllByType(type));
+  }
+
+  @GetMapping(params = {"workerCategory", "type"})
+  protected ResponseEntity<List<ProcedureView>> getAllByWorkerCategoryAndProcedureType(
+      @RequestParam WorkerCategory workerCategory,
+      @RequestParam ProcedureType type) {
+    return ResponseEntity.ok(service.findAllByWorkerCategoryAndType(workerCategory, type));
   }
 
   @Override
