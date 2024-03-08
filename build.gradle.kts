@@ -1,22 +1,32 @@
 plugins {
   java
-  id("org.springframework.boot") version "3.1.1"
-  id("io.spring.dependency-management") version "1.1.0"
-  kotlin("jvm") version "1.9.0"
-  kotlin("kapt") version "1.9.0"
-  kotlin("plugin.lombok") version "1.9.0"
+  id("org.springframework.boot") version "3.2.3"
+  id("io.spring.dependency-management") version "1.1.4"
+  kotlin("jvm") version "1.9.23"
+  kotlin("kapt") version "1.9.23"
+  kotlin("plugin.lombok") version "1.9.23"
 }
 
 group = "com.thekitchen"
 version = "0.0.3"
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
 }
 
 configurations {
   compileOnly {
     extendsFrom(configurations.annotationProcessor.get())
+    kapt {
+      keepJavacAnnotationProcessors = true
+      arguments {
+        // Set Mapstruct Configuration options here
+        // https://kotlinlang.org/docs/reference/kapt.html#annotation-processor-arguments
+        // https://mapstruct.org/documentation/stable/reference/html/#configuration-options
+        arg("mapstruct.defaultComponentModel", "spring")
+      }
+    }
   }
 }
 
@@ -29,7 +39,9 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-actuator")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
   compileOnly("org.projectlombok:lombok")
+  testCompileOnly("org.projectlombok:lombok")
   annotationProcessor("org.projectlombok:lombok")
+  testAnnotationProcessor("org.projectlombok:lombok")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 
   // Custom dependencies
@@ -42,17 +54,6 @@ dependencies {
 
   testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
   testImplementation("org.assertj:assertj-core:3.11.1")
-}
-
-
-kapt {
-  keepJavacAnnotationProcessors = true
-  arguments {
-    // Set Mapstruct Configuration options here
-    // https://kotlinlang.org/docs/reference/kapt.html#annotation-processor-arguments
-    // https://mapstruct.org/documentation/stable/reference/html/#configuration-options
-    arg("mapstruct.defaultComponentModel", "spring")
-  }
 }
 
 tasks.withType<Test> {
