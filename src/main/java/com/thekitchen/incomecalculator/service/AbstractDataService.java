@@ -2,10 +2,11 @@ package com.thekitchen.incomecalculator.service;
 
 import com.thekitchen.incomecalculator.repository.Repository;
 import com.thekitchen.incomecalculator.service.mapper.RequestMapper;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
@@ -37,9 +38,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
   @Override
   public List<VIEW> saveAll(Collection<REQUEST> requests) {
     return requests.stream()
-        .map(mapper::toModel)
-        .map(repository::save)
-        .map(mapper::toView)
+        .map(this::save)
         .toList();
   }
 
