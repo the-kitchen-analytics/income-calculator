@@ -1,17 +1,18 @@
 plugins {
   java
-  id("org.springframework.boot") version "3.1.1"
-  id("io.spring.dependency-management") version "1.1.0"
-  kotlin("jvm") version "1.9.0"
-  kotlin("kapt") version "1.9.0"
-  kotlin("plugin.lombok") version "1.9.0"
+  id("org.springframework.boot") version "3.2.3"
+  id("io.spring.dependency-management") version "1.1.4"
+  kotlin("jvm") version "1.9.23"
+  kotlin("kapt") version "1.9.23"
+  kotlin("plugin.lombok") version "1.9.23"
 }
 
 group = "com.thekitchen"
 version = "0.0.3"
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_17
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
 }
 
 configurations {
