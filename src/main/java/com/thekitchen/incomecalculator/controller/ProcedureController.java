@@ -2,40 +2,43 @@ package com.thekitchen.incomecalculator.controller;
 
 import com.thekitchen.incomecalculator.controller.model.*;
 import com.thekitchen.incomecalculator.service.ProcedureDataService;
-import com.thekitchen.incomecalculator.service.QueryParamsService;
-import com.thekitchen.incomecalculator.service.model.ProceduresQueryParams;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "procedures")
 class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureView, String> {
 
   private final ProcedureDataService service;
-  private final QueryParamsService<ProceduresQueryParams, ProcedureView> queryParamsService;
 
-  ProcedureController(ProcedureDataService service,
-                      QueryParamsService<ProceduresQueryParams, ProcedureView> queryParamsService) {
+  ProcedureController(ProcedureDataService service) {
     super(service);
     this.service = service;
-    this.queryParamsService = queryParamsService;
   }
 
   @GetMapping
-  protected ResponseEntity<List<ProcedureView>> getAll(
-      @RequestParam(required = false) WorkerCategory workerCategory,
-      @RequestParam(required = false) ProcedureType type) {
+  protected ResponseEntity<List<ProcedureView>> getAll() {
+    return ResponseEntity.ok(service.getAll());
+  }
 
-    var queryParams = new ProceduresQueryParams(
-        Optional.ofNullable(workerCategory),
-        Optional.ofNullable(type)
-    );
+  @GetMapping(params = "workerCategory")
+  protected ResponseEntity<List<ProcedureView>> getAllByWorkerCategory(@RequestParam WorkerCategory workerCategory) {
+    return ResponseEntity.ok(service.findAllByWorkerCategory(workerCategory));
+  }
 
-    return ResponseEntity.ok(queryParamsService.get(queryParams));
+  @GetMapping(params = "type")
+  protected ResponseEntity<List<ProcedureView>> getAllByProcedureType(@RequestParam ProcedureType type) {
+    return ResponseEntity.ok(service.findAllByType(type));
+  }
+
+  @GetMapping(params = {"workerCategory", "type"})
+  protected ResponseEntity<List<ProcedureView>> getAllByWorkerCategoryAndProcedureType(
+      @RequestParam WorkerCategory workerCategory,
+      @RequestParam ProcedureType type) {
+    return ResponseEntity.ok(service.findAllByWorkerCategoryAndType(workerCategory, type));
   }
 
   @Override
