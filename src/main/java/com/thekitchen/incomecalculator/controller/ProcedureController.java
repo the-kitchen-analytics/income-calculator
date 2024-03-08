@@ -2,8 +2,6 @@ package com.thekitchen.incomecalculator.controller;
 
 import com.thekitchen.incomecalculator.controller.model.*;
 import com.thekitchen.incomecalculator.service.ProcedureDataService;
-import com.thekitchen.incomecalculator.service.QueryParamsService;
-import com.thekitchen.incomecalculator.service.model.ProceduresQueryParams;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,13 +13,10 @@ import java.util.List;
 class ProcedureController extends AbstractCrudController<ProcedureRequest, ProcedureView, String> {
 
   private final ProcedureDataService service;
-  private final QueryParamsService<ProceduresQueryParams, ProcedureView> queryParamsService;
 
-  ProcedureController(ProcedureDataService service,
-                      QueryParamsService<ProceduresQueryParams, ProcedureView> queryParamsService) {
+  ProcedureController(ProcedureDataService service) {
     super(service);
     this.service = service;
-    this.queryParamsService = queryParamsService;
   }
 
   @GetMapping
