@@ -1,0 +1,9 @@
+build
+gradle
+.gradle
+.idea
+.firebase-config
+.git
+.github
+.gitignore
+*.md
