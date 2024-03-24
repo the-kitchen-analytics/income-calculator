@@ -5,7 +5,7 @@ WORKDIR $APP_HOME
 COPY --chown=gradle:gradle . .
 RUN gradle build -x test --no-daemon
 
-ARG JAR_FILE=income-calculator-0.0.3.jar
+ARG JAR_FILE=income-calculator.jar
 ARG JAR_TARGET_DIR=/build/libs
 ARG JAR=$APP_HOME$JAR_TARGET_DIR/$JAR_FILE
 
