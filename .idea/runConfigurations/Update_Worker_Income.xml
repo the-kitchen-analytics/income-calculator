@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Update Worker Income" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="containerName" value="update-worker-income-script" />
+        <option name="commandLineOptions" value="--network income_calculator_network" />
+        <option name="sourceFilePath" value="etc/scripts/updateWorkerIncome/Dockerfile" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
