@@ -53,7 +53,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
   public VIEW patch(ID id, JsonMergePatch patch) {
     return repository.getById(id)
         .map(model -> applyPatch(patch, model))
-        .map(repository::save)
+        .map(model -> repository.update(id, model))
         .map(mapper::toView)
         .orElseThrow();
   }
