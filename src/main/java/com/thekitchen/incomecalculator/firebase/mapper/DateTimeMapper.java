@@ -1,8 +1,9 @@
 package com.thekitchen.incomecalculator.firebase.mapper;
 
 import com.google.cloud.Timestamp;
-import java.time.Instant;
 import org.mapstruct.Mapper;
+
+import java.time.Instant;
 
 @Mapper
 public interface DateTimeMapper {

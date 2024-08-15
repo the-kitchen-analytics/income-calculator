@@ -1,6 +1,7 @@
 package com.thekitchen.incomecalculator.firebase.mapper;
 
 import com.thekitchen.incomecalculator.util.StringUtils;
+
 import java.util.Optional;
 
 @FunctionalInterface
