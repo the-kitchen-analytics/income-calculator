@@ -49,6 +49,7 @@ dependencies {
   implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
   implementation("com.google.firebase:firebase-admin:$firebaseVersion")
   implementation("org.mapstruct:mapstruct:${mapstructVersion}")
+  implementation("com.github.java-json-tools:json-patch:1.13")
   kapt("org.mapstruct:mapstruct-processor:${mapstructVersion}")
 
   testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
