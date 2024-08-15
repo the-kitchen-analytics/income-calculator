@@ -3,12 +3,13 @@ package com.thekitchen.incomecalculator.service;
 import com.google.firebase.auth.FirebaseAuth;
 import com.thekitchen.incomecalculator.repository.ReceiptRepository;
 import com.thekitchen.incomecalculator.service.model.Receipt;
-import java.util.List;
-import java.util.function.Consumer;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.function.Consumer;
 
 @Slf4j
 @Service

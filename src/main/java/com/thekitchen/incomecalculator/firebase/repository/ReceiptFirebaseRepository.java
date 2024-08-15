@@ -6,11 +6,12 @@ import com.thekitchen.incomecalculator.firebase.entity.ReceiptFirebaseEntity;
 import com.thekitchen.incomecalculator.firebase.mapper.FirebaseEntityMapper;
 import com.thekitchen.incomecalculator.repository.ReceiptRepository;
 import com.thekitchen.incomecalculator.service.model.Receipt;
+import org.springframework.stereotype.Repository;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import org.springframework.stereotype.Repository;
 
 @Repository
 public class ReceiptFirebaseRepository

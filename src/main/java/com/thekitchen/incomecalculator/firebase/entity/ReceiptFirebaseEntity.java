@@ -1,8 +1,9 @@
 package com.thekitchen.incomecalculator.firebase.entity;
 
 import com.google.cloud.Timestamp;
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class ReceiptFirebaseEntity implements FirebaseEntity {

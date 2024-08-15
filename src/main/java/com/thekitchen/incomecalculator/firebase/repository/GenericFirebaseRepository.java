@@ -1,13 +1,12 @@
 package com.thekitchen.incomecalculator.firebase.repository;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.CollectionReference;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.*;
 import com.thekitchen.incomecalculator.firebase.entity.FirebaseEntity;
 import com.thekitchen.incomecalculator.firebase.mapper.FirebaseEntityMapper;
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +14,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Stream;
-import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 
 @RequiredArgsConstructor
 public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
@@ -117,4 +114,3 @@ public class GenericFirebaseRepository<M, E extends FirebaseEntity> {
     return future.get(DEFAULT_WAIT_INTERVAL_MILLIS, TimeUnit.MILLISECONDS);
   }
 }
-

@@ -8,11 +8,12 @@ import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import com.thekitchen.incomecalculator.service.model.ProcedureType;
 import com.thekitchen.incomecalculator.service.model.WorkerCategory;
+import org.springframework.stereotype.Repository;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import org.springframework.stereotype.Repository;
 
 @Repository
 public class ProcedureFirebaseRepository

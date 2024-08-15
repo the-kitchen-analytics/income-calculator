@@ -1,16 +1,13 @@
 package com.thekitchen.incomecalculator.service.mapper;
 
-import com.thekitchen.incomecalculator.controller.model.CreateProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.PriceDetails;
-import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureType;
-import com.thekitchen.incomecalculator.controller.model.ProcedureView;
+import com.thekitchen.incomecalculator.controller.model.*;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import com.thekitchen.incomecalculator.service.model.WorkerCategory;
+import org.mapstruct.Mapper;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
-import org.mapstruct.Mapper;
 
 @Mapper
 public interface ProcedureRequestMapper

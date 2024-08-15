@@ -3,6 +3,7 @@ package com.thekitchen.incomecalculator.repository;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import com.thekitchen.incomecalculator.service.model.ProcedureType;
 import com.thekitchen.incomecalculator.service.model.WorkerCategory;
+
 import java.util.List;
 
 public interface ProcedureRepository extends Repository<Procedure, String> {
