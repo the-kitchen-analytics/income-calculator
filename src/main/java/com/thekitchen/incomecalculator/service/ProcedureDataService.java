@@ -1,9 +1,12 @@
 package com.thekitchen.incomecalculator.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import com.thekitchen.incomecalculator.controller.model.*;
 import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.mapper.ProcedureRequestMapper;
 import com.thekitchen.incomecalculator.service.model.Procedure;
+import com.thekitchen.incomecalculator.util.JsonPatchUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -15,13 +18,15 @@ public class ProcedureDataService
 
   private final ProcedureRequestMapper mapper;
   private final ProcedureRepository repository;
+  private final ObjectMapper objectMapper;
 
   public ProcedureDataService(
       ProcedureRequestMapper mapper,
-      ProcedureRepository repository) {
+      ProcedureRepository repository, ObjectMapper objectMapper) {
     super(mapper, repository);
     this.mapper = mapper;
     this.repository = repository;
+    this.objectMapper = objectMapper;
   }
 
   public List<ProcedureView> create(CreateProcedureRequest request) {
@@ -60,5 +65,10 @@ public class ProcedureDataService
         .stream()
         .map(mapper::toView)
         .toList();
+  }
+
+  @Override
+  protected Procedure applyPatch(JsonMergePatch patch, Procedure model) {
+    return JsonPatchUtils.applyPatch(objectMapper, patch, model, Procedure.class);
   }
 }

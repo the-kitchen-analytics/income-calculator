@@ -1,5 +1,6 @@
 package com.thekitchen.incomecalculator.service;
 
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import com.thekitchen.incomecalculator.repository.Repository;
 import com.thekitchen.incomecalculator.service.mapper.RequestMapper;
 import org.junit.jupiter.api.Test;
@@ -34,6 +35,11 @@ class AbstractDataServiceTest {
   static class UnderTest extends AbstractDataService<Model, Request, View, Id> {
     public UnderTest(RequestMapper<Model, Request, View> mapper, Repository<Model, Id> repository) {
       super(mapper, repository);
+    }
+
+    @Override
+    protected Model applyPatch(JsonMergePatch patch, Model model) {
+      throw new UnsupportedOperationException("Have not implemented yet.");
     }
   }
 

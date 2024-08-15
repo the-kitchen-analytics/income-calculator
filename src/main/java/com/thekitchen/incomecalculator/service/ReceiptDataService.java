@@ -1,14 +1,16 @@
 package com.thekitchen.incomecalculator.service;
 
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import com.thekitchen.incomecalculator.controller.model.ReceiptRequest;
 import com.thekitchen.incomecalculator.controller.model.ReceiptView;
 import com.thekitchen.incomecalculator.repository.ReceiptRepository;
 import com.thekitchen.incomecalculator.service.mapper.ReceiptMapper;
 import com.thekitchen.incomecalculator.service.model.Receipt;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import org.springframework.stereotype.Service;
 
 @Service
 public class ReceiptDataService extends AbstractDataService<Receipt, ReceiptRequest, ReceiptView, String> {
@@ -33,5 +35,10 @@ public class ReceiptDataService extends AbstractDataService<Receipt, ReceiptRequ
     return super.getAll()
         .stream()
         .collect(Collectors.groupingBy(ReceiptView::uid));
+  }
+
+  @Override
+  protected Receipt applyPatch(JsonMergePatch patch, Receipt receipt) {
+    throw new UnsupportedOperationException("Have not implemented yet.");
   }
 }

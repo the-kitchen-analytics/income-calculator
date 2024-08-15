@@ -1,5 +1,6 @@
 package com.thekitchen.incomecalculator.service;
 
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import com.thekitchen.incomecalculator.repository.Repository;
 import com.thekitchen.incomecalculator.service.mapper.RequestMapper;
 import lombok.RequiredArgsConstructor;
@@ -49,6 +50,15 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
   }
 
   @Override
+  public VIEW patch(ID id, JsonMergePatch patch) {
+    return repository.getById(id)
+        .map(model -> applyPatch(patch, model))
+        .map(repository::save)
+        .map(mapper::toView)
+        .orElseThrow();
+  }
+
+  @Override
   public void delete(ID id) {
     repository.delete(id);
   }
@@ -57,4 +67,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
   public void deleteAll(Collection<ID> ids) {
     repository.deleteAll(ids);
   }
+
+  protected abstract MODEL applyPatch(JsonMergePatch patch, MODEL model);
+
 }

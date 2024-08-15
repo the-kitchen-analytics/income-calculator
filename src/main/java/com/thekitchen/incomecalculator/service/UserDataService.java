@@ -1,5 +1,6 @@
 package com.thekitchen.incomecalculator.service;
 
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import com.thekitchen.incomecalculator.controller.model.CreateUserRequest;
 import com.thekitchen.incomecalculator.controller.model.UserView;
 import com.thekitchen.incomecalculator.repository.UserRepository;
@@ -27,5 +28,10 @@ public class UserDataService extends AbstractDataService<User, CreateUserRequest
         .ifPresent(deletionService::deleteByUid);
 
     super.delete(id);
+  }
+
+  @Override
+  protected User applyPatch(JsonMergePatch patch, User model) {
+    throw new UnsupportedOperationException("Have not implemented yet.");
   }
 }
