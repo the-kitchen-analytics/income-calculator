@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.domain.procedure.repository;
 
-import com.thekitchen.incomecalculator.domain.procedure.api.model.model.Procedure;
+import com.thekitchen.incomecalculator.domain.procedure.api.model.Procedure;
 import com.thekitchen.incomecalculator.domain.procedureType.api.model.ProcedureType;
 import com.thekitchen.incomecalculator.domain.workerCategory.api.model.WorkerCategory;
 import com.thekitchen.incomecalculator.shared.repository.Repository;

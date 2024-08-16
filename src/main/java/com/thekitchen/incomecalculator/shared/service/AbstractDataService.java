@@ -32,7 +32,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
 
   @Override
   public VIEW save(REQUEST request) {
-    var saved = repository.save(mapper.toModel(request));
+    var saved = repository.save(mapper.fromRequest(request));
     return mapper.toView(saved);
   }
 
@@ -45,7 +45,7 @@ public abstract class AbstractDataService<MODEL, REQUEST, VIEW, ID>
 
   @Override
   public VIEW update(ID id, REQUEST request) {
-    var updated = repository.update(id, mapper.toModel(request));
+    var updated = repository.update(id, mapper.fromRequest(request));
     return mapper.toView(updated);
   }
 

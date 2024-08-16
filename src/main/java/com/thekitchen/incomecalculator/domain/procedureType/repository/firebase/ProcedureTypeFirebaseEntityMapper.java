@@ -1,7 +1,7 @@
 package com.thekitchen.incomecalculator.domain.procedureType.repository.firebase;
 
 import com.thekitchen.incomecalculator.domain.procedureType.api.model.ProcedureType;
-import com.thekitchen.incomecalculator.shared.mapper.FirebaseEnumMapper;
+import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEnumMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.ValueMapping;
 
@@ -18,7 +18,7 @@ public interface ProcedureTypeFirebaseEntityMapper
         .filter(it -> Objects.equals(it.value(), entity))
         .map(this::toModel)
         .findFirst()
-        .orElseThrow();
+        .orElse(null);
   }
 
   @Override

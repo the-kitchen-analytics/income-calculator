@@ -2,7 +2,7 @@ package com.thekitchen.incomecalculator.domain.procedure.repository.firebase;
 
 import com.google.cloud.firestore.Firestore;
 import com.thekitchen.incomecalculator.config.firebase.FirebaseConfig.CollectionName;
-import com.thekitchen.incomecalculator.domain.procedure.api.model.model.Procedure;
+import com.thekitchen.incomecalculator.domain.procedure.api.model.Procedure;
 import com.thekitchen.incomecalculator.domain.procedure.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.domain.procedureType.api.model.ProcedureType;
 import com.thekitchen.incomecalculator.domain.workerCategory.api.model.WorkerCategory;

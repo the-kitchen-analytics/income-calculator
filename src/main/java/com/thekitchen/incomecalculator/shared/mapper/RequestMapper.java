@@ -1,9 +1,7 @@
 package com.thekitchen.incomecalculator.shared.mapper;
 
-public interface RequestMapper<MODEL, REQUEST, VIEW> {
+public interface RequestMapper<M, R, V> extends ViewModelMapper<V, M> {
 
-  MODEL toModel(REQUEST request);
-
-  VIEW toView(MODEL model);
+  M fromRequest(R request);
 
 }

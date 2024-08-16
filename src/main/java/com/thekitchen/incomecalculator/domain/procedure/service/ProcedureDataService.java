@@ -2,7 +2,7 @@ package com.thekitchen.incomecalculator.domain.procedure.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import com.thekitchen.incomecalculator.domain.procedure.api.model.model.Procedure;
+import com.thekitchen.incomecalculator.domain.procedure.api.model.Procedure;
 import com.thekitchen.incomecalculator.domain.procedure.api.rest.CreateProcedureRequest;
 import com.thekitchen.incomecalculator.domain.procedure.api.rest.PriceDetails;
 import com.thekitchen.incomecalculator.domain.procedure.api.rest.ProcedureRequest;

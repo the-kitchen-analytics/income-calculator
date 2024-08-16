@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.domain.receipt.api.model;
 
-import com.thekitchen.incomecalculator.domain.procedure.api.model.model.Procedure;
+import com.thekitchen.incomecalculator.domain.receiptProcedure.api.model.ReceiptProcedure;
 
 import java.time.Instant;
 import java.util.List;
@@ -10,7 +10,7 @@ public record Receipt(
     String uid,
     Instant date,
     Instant dateCreated,
-    List<Procedure> procedures
+    List<ReceiptProcedure> procedures
 ) {
 
 }

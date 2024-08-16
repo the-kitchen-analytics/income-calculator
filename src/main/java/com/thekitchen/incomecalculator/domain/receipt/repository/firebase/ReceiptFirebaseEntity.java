@@ -1,6 +1,7 @@
 package com.thekitchen.incomecalculator.domain.receipt.repository.firebase;
 
 import com.google.cloud.Timestamp;
+import com.thekitchen.incomecalculator.domain.receiptProcedure.repository.firebase.ReceiptProcedureFirebaseEntity;
 import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEntity;
 import lombok.Data;
 

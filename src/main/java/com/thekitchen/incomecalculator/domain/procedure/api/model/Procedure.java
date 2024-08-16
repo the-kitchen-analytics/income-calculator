@@ -1,4 +1,4 @@
-package com.thekitchen.incomecalculator.domain.procedure.api.model.model;
+package com.thekitchen.incomecalculator.domain.procedure.api.model;
 
 import com.thekitchen.incomecalculator.domain.procedureType.api.model.ProcedureType;
 import com.thekitchen.incomecalculator.domain.workerCategory.api.model.WorkerCategory;

@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.domain.procedure.repository.firebase;
 
-import com.thekitchen.incomecalculator.domain.procedure.api.model.model.Procedure;
+import com.thekitchen.incomecalculator.domain.procedure.api.model.Procedure;
 import com.thekitchen.incomecalculator.domain.procedureType.repository.firebase.ProcedureTypeFirebaseEntityMapper;
 import com.thekitchen.incomecalculator.domain.workerCategory.repository.firebase.WorkerCategoryFirebaseEntityMapper;
 import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEntityMapper;
