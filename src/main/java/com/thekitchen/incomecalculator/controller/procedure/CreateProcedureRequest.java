@@ -1,4 +1,4 @@
-package com.thekitchen.incomecalculator.controller.model;
+package com.thekitchen.incomecalculator.controller.procedure;
 
 import java.util.List;
 

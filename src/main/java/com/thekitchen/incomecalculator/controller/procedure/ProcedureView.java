@@ -1,4 +1,6 @@
-package com.thekitchen.incomecalculator.controller.model;
+package com.thekitchen.incomecalculator.controller.procedure;
+
+import com.thekitchen.incomecalculator.controller.user.WorkerCategory;
 
 import java.math.BigDecimal;
 

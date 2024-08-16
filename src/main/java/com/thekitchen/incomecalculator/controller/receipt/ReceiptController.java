@@ -1,7 +1,6 @@
-package com.thekitchen.incomecalculator.controller;
+package com.thekitchen.incomecalculator.controller.receipt;
 
-import com.thekitchen.incomecalculator.controller.model.ReceiptRequest;
-import com.thekitchen.incomecalculator.controller.model.ReceiptView;
+import com.thekitchen.incomecalculator.controller.AbstractCrudController;
 import com.thekitchen.incomecalculator.service.ReceiptDataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

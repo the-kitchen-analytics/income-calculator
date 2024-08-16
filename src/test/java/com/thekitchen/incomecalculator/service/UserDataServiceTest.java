@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.service;
 
-import com.thekitchen.incomecalculator.controller.model.UserView;
+import com.thekitchen.incomecalculator.controller.user.UserView;
 import com.thekitchen.incomecalculator.repository.UserRepository;
 import com.thekitchen.incomecalculator.service.mapper.UserRequestMapper;
 import com.thekitchen.incomecalculator.service.model.User;

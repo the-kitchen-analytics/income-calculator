@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.service.mapper;
 
-import com.thekitchen.incomecalculator.controller.model.*;
+import com.thekitchen.incomecalculator.controller.procedure.*;
 import com.thekitchen.incomecalculator.service.model.Procedure;
 import com.thekitchen.incomecalculator.service.model.WorkerCategory;
 import org.mapstruct.Mapper;
@@ -34,8 +34,8 @@ public interface ProcedureRequestMapper
         .setScale(3, RoundingMode.HALF_UP);
   }
 
-  WorkerCategory toModel(com.thekitchen.incomecalculator.controller.model.WorkerCategory request);
+  WorkerCategory toModel(com.thekitchen.incomecalculator.controller.user.WorkerCategory request);
 
-  com.thekitchen.incomecalculator.service.model.ProcedureType toModel(com.thekitchen.incomecalculator.controller.model.ProcedureType request);
+  com.thekitchen.incomecalculator.service.model.ProcedureType toModel(ProcedureType request);
 
 }

@@ -1,6 +1,4 @@
-package com.thekitchen.incomecalculator.controller.model;
-
-import com.thekitchen.incomecalculator.service.model.WorkerCategory;
+package com.thekitchen.incomecalculator.controller.user;
 
 public record CreateUserRequest(
     String name,

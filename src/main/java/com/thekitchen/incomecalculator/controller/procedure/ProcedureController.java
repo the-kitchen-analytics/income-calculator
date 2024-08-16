@@ -1,9 +1,7 @@
-package com.thekitchen.incomecalculator.controller;
+package com.thekitchen.incomecalculator.controller.procedure;
 
-import com.thekitchen.incomecalculator.controller.model.ProcedureRequest;
-import com.thekitchen.incomecalculator.controller.model.ProcedureType;
-import com.thekitchen.incomecalculator.controller.model.ProcedureView;
-import com.thekitchen.incomecalculator.controller.model.WorkerCategory;
+import com.thekitchen.incomecalculator.controller.AbstractCrudController;
+import com.thekitchen.incomecalculator.controller.user.WorkerCategory;
 import com.thekitchen.incomecalculator.service.ProcedureDataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -2,7 +2,11 @@ package com.thekitchen.incomecalculator.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import com.thekitchen.incomecalculator.controller.model.*;
+import com.thekitchen.incomecalculator.controller.procedure.CreateProcedureRequest;
+import com.thekitchen.incomecalculator.controller.procedure.ProcedureRequest;
+import com.thekitchen.incomecalculator.controller.procedure.ProcedureType;
+import com.thekitchen.incomecalculator.controller.procedure.ProcedureView;
+import com.thekitchen.incomecalculator.controller.user.WorkerCategory;
 import com.thekitchen.incomecalculator.repository.ProcedureRepository;
 import com.thekitchen.incomecalculator.service.mapper.ProcedureRequestMapper;
 import com.thekitchen.incomecalculator.service.model.Procedure;

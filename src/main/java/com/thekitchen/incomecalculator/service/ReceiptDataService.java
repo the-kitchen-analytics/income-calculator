@@ -1,8 +1,8 @@
 package com.thekitchen.incomecalculator.service;
 
 import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import com.thekitchen.incomecalculator.controller.model.ReceiptRequest;
-import com.thekitchen.incomecalculator.controller.model.ReceiptView;
+import com.thekitchen.incomecalculator.controller.receipt.ReceiptRequest;
+import com.thekitchen.incomecalculator.controller.receipt.ReceiptView;
 import com.thekitchen.incomecalculator.repository.ReceiptRepository;
 import com.thekitchen.incomecalculator.service.mapper.ReceiptMapper;
 import com.thekitchen.incomecalculator.service.model.Receipt;

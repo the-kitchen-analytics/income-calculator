@@ -1,7 +1,6 @@
-package com.thekitchen.incomecalculator.controller;
+package com.thekitchen.incomecalculator.controller.user;
 
-import com.thekitchen.incomecalculator.controller.model.CreateUserRequest;
-import com.thekitchen.incomecalculator.controller.model.UserView;
+import com.thekitchen.incomecalculator.controller.AbstractCrudController;
 import com.thekitchen.incomecalculator.service.UserDataService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

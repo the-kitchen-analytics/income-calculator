@@ -1,4 +1,6 @@
-package com.thekitchen.incomecalculator.controller.model;
+package com.thekitchen.incomecalculator.controller.receipt;
+
+import com.thekitchen.incomecalculator.controller.procedure.ProcedureView;
 
 import java.time.Instant;
 import java.util.List;
