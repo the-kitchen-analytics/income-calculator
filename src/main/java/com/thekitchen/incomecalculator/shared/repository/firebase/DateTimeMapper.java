@@ -1,4 +1,4 @@
-package com.thekitchen.incomecalculator.shared.mapper;
+package com.thekitchen.incomecalculator.shared.repository.firebase;
 
 import com.google.cloud.Timestamp;
 import org.mapstruct.Mapper;

@@ -1,6 +1,4 @@
-package com.thekitchen.incomecalculator.shared.mapper;
-
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEnum;
+package com.thekitchen.incomecalculator.shared.repository.firebase;
 
 import java.util.Optional;
 

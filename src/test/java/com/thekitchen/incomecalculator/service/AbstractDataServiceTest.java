@@ -86,7 +86,7 @@ class AbstractDataServiceTest {
   @Test
   void save_Should_DelegateToRepository() {
     // Given
-    when(mapper.toModel(REQUEST)).thenReturn(MODEL);
+    when(mapper.fromRequest(REQUEST)).thenReturn(MODEL);
     when(repository.save(MODEL)).thenReturn(SAVED_MODEL);
     when(mapper.toView(SAVED_MODEL)).thenReturn(VIEW);
 
@@ -100,7 +100,7 @@ class AbstractDataServiceTest {
   @Test
   void saveAll_Should_DelegateToRepository() {
     // Given
-    when(mapper.toModel(REQUEST)).thenReturn(MODEL);
+    when(mapper.fromRequest(REQUEST)).thenReturn(MODEL);
     when(repository.save(MODEL)).thenReturn(SAVED_MODEL);
     when(mapper.toView(SAVED_MODEL)).thenReturn(VIEW);
 
@@ -114,7 +114,7 @@ class AbstractDataServiceTest {
   @Test
   void update_Should_DelegateToRepository() {
     // Given
-    when(mapper.toModel(REQUEST)).thenReturn(MODEL);
+    when(mapper.fromRequest(REQUEST)).thenReturn(MODEL);
     when(repository.update(ID, MODEL)).thenReturn(SAVED_MODEL);
     when(mapper.toView(SAVED_MODEL)).thenReturn(VIEW);
 
