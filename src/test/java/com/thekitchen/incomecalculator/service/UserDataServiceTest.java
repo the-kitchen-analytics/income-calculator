@@ -1,9 +1,11 @@
 package com.thekitchen.incomecalculator.service;
 
-import com.thekitchen.incomecalculator.controller.model.UserView;
-import com.thekitchen.incomecalculator.repository.UserRepository;
-import com.thekitchen.incomecalculator.service.mapper.UserRequestMapper;
-import com.thekitchen.incomecalculator.service.model.User;
+import com.thekitchen.incomecalculator.domain.user.api.model.User;
+import com.thekitchen.incomecalculator.domain.user.api.rest.UserView;
+import com.thekitchen.incomecalculator.domain.user.repository.UserRepository;
+import com.thekitchen.incomecalculator.domain.user.service.UserDataDeletionService;
+import com.thekitchen.incomecalculator.domain.user.service.UserDataService;
+import com.thekitchen.incomecalculator.domain.user.service.UserRequestMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
