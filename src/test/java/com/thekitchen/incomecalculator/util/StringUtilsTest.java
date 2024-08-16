@@ -1,5 +1,6 @@
 package com.thekitchen.incomecalculator.util;
 
+import com.thekitchen.incomecalculator.shared.util.StringUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

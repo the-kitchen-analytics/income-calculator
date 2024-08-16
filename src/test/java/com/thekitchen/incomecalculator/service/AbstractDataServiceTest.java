@@ -1,8 +1,9 @@
 package com.thekitchen.incomecalculator.service;
 
 import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import com.thekitchen.incomecalculator.repository.Repository;
-import com.thekitchen.incomecalculator.service.mapper.RequestMapper;
+import com.thekitchen.incomecalculator.shared.mapper.RequestMapper;
+import com.thekitchen.incomecalculator.shared.repository.Repository;
+import com.thekitchen.incomecalculator.shared.service.AbstractDataService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
