@@ -1,10 +1,10 @@
 plugins {
   java
-  id("org.springframework.boot") version "3.2.3"
-  id("io.spring.dependency-management") version "1.1.4"
-  kotlin("jvm") version "1.9.23"
-  kotlin("kapt") version "1.9.23"
-  kotlin("plugin.lombok") version "1.9.23"
+  id("org.springframework.boot") version "3.3.2"
+  id("io.spring.dependency-management") version "1.1.6"
+  kotlin("jvm") version "2.0.10"
+  kotlin("kapt") version "2.0.10"
+  kotlin("plugin.lombok") version "2.0.10"
 }
 
 group = "com.thekitchen"
@@ -44,16 +44,15 @@ dependencies {
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 
   // Custom dependencies
-  val firebaseVersion = "9.2.0"
-  val mapstructVersion = "1.5.5.Final"
+  val mapstructVersion = "1.6.0"
   implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
-  implementation("com.google.firebase:firebase-admin:$firebaseVersion")
+  implementation("com.google.firebase:firebase-admin:9.3.0")
   implementation("org.mapstruct:mapstruct:${mapstructVersion}")
   implementation("com.github.java-json-tools:json-patch:1.13")
   kapt("org.mapstruct:mapstruct-processor:${mapstructVersion}")
 
-  testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
-  testImplementation("org.assertj:assertj-core:3.11.1")
+  testImplementation("org.junit.jupiter:junit-jupiter:5.10.3")
+  testImplementation("org.assertj:assertj-core:3.26.3")
 }
 
 tasks.withType<Test> {
