@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public abstract class AbstractCrudController<REQUEST, RESPONSE, ID> {
   protected ResponseEntity<RESPONSE> get(@PathVariable ID id) {
     return service.get(id)
         .map(ResponseEntity::ok)
-        .orElseGet(() -> ResponseEntity.notFound().build());
+        .orElseGet(this::notFound);
   }
 
   @PostMapping
@@ -39,12 +40,20 @@ public abstract class AbstractCrudController<REQUEST, RESPONSE, ID> {
 
   @PutMapping(value = "{id}")
   protected ResponseEntity<RESPONSE> update(@PathVariable ID id, @RequestBody REQUEST request) {
-    return ResponseEntity.ok(service.update(id, request));
+    try {
+      return ResponseEntity.ok(service.update(id, request));
+    } catch (NoSuchElementException e) {
+      return notFound();
+    }
   }
 
   @PatchMapping(value = "{id}")
   protected ResponseEntity<RESPONSE> patch(@PathVariable ID id, @RequestBody JsonMergePatch patch) {
-    return ResponseEntity.ok(service.patch(id, patch));
+    try {
+      return ResponseEntity.ok(service.patch(id, patch));
+    } catch (NoSuchElementException e) {
+      return notFound();
+    }
   }
 
   @DeleteMapping(value = "{id}")
@@ -59,5 +68,9 @@ public abstract class AbstractCrudController<REQUEST, RESPONSE, ID> {
     service.deleteAll(ids);
     return ResponseEntity.noContent()
         .build();
+  }
+
+  private ResponseEntity<RESPONSE> notFound() {
+    return ResponseEntity.notFound().build();
   }
 }

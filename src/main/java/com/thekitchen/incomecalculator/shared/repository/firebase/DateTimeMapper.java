@@ -1,19 +1,27 @@
 package com.thekitchen.incomecalculator.shared.repository.firebase;
 
 import com.google.cloud.Timestamp;
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
-@Mapper
-public interface DateTimeMapper {
+@Component
+public class DateTimeMapper {
 
-  default Instant toInstant(Timestamp timestamp) {
-    return timestamp.toSqlTimestamp().toInstant();
+  public Instant toInstant(Timestamp timestamp) {
+    if (timestamp == null) {
+      return null;
+    }
+
+    return Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
   }
 
-  default Timestamp toTimestamp(Instant instant) {
-    return Timestamp.ofTimeMicroseconds(instant.toEpochMilli());
+  public Timestamp toTimestamp(Instant instant) {
+    if (instant == null) {
+      return null;
+    }
+
+    return Timestamp.ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
   }
 
 }

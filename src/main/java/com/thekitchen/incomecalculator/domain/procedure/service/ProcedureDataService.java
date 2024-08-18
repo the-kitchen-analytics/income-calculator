@@ -24,19 +24,19 @@ public class ProcedureDataService
   private final ProcedureRequestMapper mapper;
   private final ProcedureRepository repository;
   private final ObjectMapper objectMapper;
-  private final WorkerIncomeCalculationService calculationService;
+  private final WorkerIncomeCalculator incomeCalculator;
 
   public ProcedureDataService(
       ProcedureRequestMapper mapper,
       ProcedureRepository repository,
       ObjectMapper objectMapper,
-      WorkerIncomeCalculationService calculationService
+      WorkerIncomeCalculator incomeCalculator
   ) {
     super(mapper, repository);
     this.mapper = mapper;
     this.repository = repository;
     this.objectMapper = objectMapper;
-    this.calculationService = calculationService;
+    this.incomeCalculator = incomeCalculator;
   }
 
   public List<ProcedureView> create(CreateProcedureRequest request) {
@@ -80,7 +80,7 @@ public class ProcedureDataService
   }
 
   private ProcedureRequest fromDetails(CreateProcedureRequest request, PriceDetails details) {
-    var workerIncome = calculationService.calculateWorkerIncome(details);
+    var workerIncome = incomeCalculator.calculate(details);
     return ProcedureRequest.fromDetails(
         request.name(),
         request.type(),
