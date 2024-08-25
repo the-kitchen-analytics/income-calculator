@@ -1,4 +1,4 @@
-FROM gradle:8.6.0-jdk21 as java-build
+FROM gradle:8.6.0-jdk21 AS java-build
 
 ARG APP_HOME=/home/gradle/src
 WORKDIR $APP_HOME
@@ -12,7 +12,7 @@ ARG JAR=$APP_HOME$JAR_TARGET_DIR/$JAR_FILE
 WORKDIR $APP_HOME/layers
 RUN java -Djarmode=layertools -jar $JAR extract
 
-FROM amazoncorretto:21-alpine as runtime
+FROM amazoncorretto:21-alpine AS runtime
 
 RUN mkdir /app
 WORKDIR /app
@@ -26,6 +26,6 @@ COPY --from=java-build /home/gradle/src/layers/snapshot-dependencies/ ./
 COPY --from=java-build /home/gradle/src/layers/application/ ./
 
 EXPOSE 8080
-ENV GOOGLE_APPLICATION_CREDENTIALS /firebase-config/service_account.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=/firebase-config/service_account.json
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
