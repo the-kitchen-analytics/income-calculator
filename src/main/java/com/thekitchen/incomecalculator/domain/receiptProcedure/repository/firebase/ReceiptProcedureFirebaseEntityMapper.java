@@ -1,8 +1,8 @@
 package com.thekitchen.incomecalculator.domain.receiptProcedure.repository.firebase;
 
+import com.glebremniov.firebase.FirebaseEntityMapper;
 import com.thekitchen.incomecalculator.domain.procedureType.repository.firebase.ProcedureTypeFirebaseEntityMapper;
 import com.thekitchen.incomecalculator.domain.receiptProcedure.api.model.ReceiptProcedure;
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEntityMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

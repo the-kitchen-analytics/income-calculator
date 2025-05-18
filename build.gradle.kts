@@ -42,6 +42,8 @@ dependencies {
   annotationProcessor("org.projectlombok:lombok")
   testAnnotationProcessor("org.projectlombok:lombok")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
+  
+  implementation(project("firebase-starter:firebase-core"))
 
   // Custom dependencies
   val mapstructVersion = "1.6.0"

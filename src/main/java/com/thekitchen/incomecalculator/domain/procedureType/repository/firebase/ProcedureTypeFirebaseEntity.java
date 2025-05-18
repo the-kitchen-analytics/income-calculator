@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.domain.procedureType.repository.firebase;
 
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEnum;
+import com.glebremniov.firebase.FirebaseEnum;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

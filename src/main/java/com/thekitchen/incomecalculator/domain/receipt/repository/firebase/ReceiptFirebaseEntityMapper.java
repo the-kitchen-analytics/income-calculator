@@ -1,13 +1,13 @@
 package com.thekitchen.incomecalculator.domain.receipt.repository.firebase;
 
+import com.glebremniov.firebase.FirebaseEntityMapper;
+import com.glebremniov.firebase.impl.FirebaseDateTimeConverter;
 import com.thekitchen.incomecalculator.domain.receipt.api.model.Receipt;
 import com.thekitchen.incomecalculator.domain.receiptProcedure.repository.firebase.ReceiptProcedureFirebaseEntityMapper;
-import com.thekitchen.incomecalculator.shared.repository.firebase.DateTimeMapper;
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEntityMapper;
 import org.mapstruct.Mapper;
 
 @Mapper(uses = {
-    DateTimeMapper.class,
+    FirebaseDateTimeConverter.class,
     ReceiptProcedureFirebaseEntityMapper.class
 })
 public interface ReceiptFirebaseEntityMapper extends FirebaseEntityMapper<Receipt, ReceiptFirebaseEntity> {

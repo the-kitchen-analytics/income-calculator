@@ -1,6 +1,6 @@
 package com.thekitchen.incomecalculator.domain.receiptProcedure.repository.firebase;
 
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEntity;
+import com.glebremniov.firebase.FirebaseEntity;
 import lombok.Data;
 
 @Data

@@ -1,7 +1,7 @@
 package com.thekitchen.incomecalculator.domain.workerCategory.repository.firebase;
 
+import com.glebremniov.firebase.FirebaseEnumMapper;
 import com.thekitchen.incomecalculator.domain.workerCategory.api.model.WorkerCategory;
-import com.thekitchen.incomecalculator.shared.repository.firebase.FirebaseEnumMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.ValueMapping;
 

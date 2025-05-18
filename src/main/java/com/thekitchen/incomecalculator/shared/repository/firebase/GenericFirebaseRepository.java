@@ -1,5 +1,7 @@
 package com.thekitchen.incomecalculator.shared.repository.firebase;
 
+import com.glebremniov.firebase.FirebaseEntity;
+import com.glebremniov.firebase.FirebaseEntityMapper;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.thekitchen.incomecalculator.shared.repository.firebase;
+package com.glebremniov.firebase;
 
 import java.util.Optional;
 

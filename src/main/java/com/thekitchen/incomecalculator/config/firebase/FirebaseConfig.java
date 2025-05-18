@@ -1,5 +1,6 @@
 package com.thekitchen.incomecalculator.config.firebase;
 
+import com.glebremniov.firebase.impl.FirebaseDateTimeConverter;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.cloud.FirestoreClient;
@@ -21,6 +22,11 @@ public class FirebaseConfig {
   @DependsOn("firebaseApp")
   Firestore firestoreClient() {
     return FirestoreClient.getFirestore();
+  }
+
+  @Bean
+  FirebaseDateTimeConverter firebaseDateTimeConverter() {
+    return new FirebaseDateTimeConverter();
   }
 
   @Getter
